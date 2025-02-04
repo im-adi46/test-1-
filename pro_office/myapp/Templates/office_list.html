@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ 
+</head>
+<body>
+    <h1>Office Staff List</h1>
+    <a href="{% url 'office_create' %}">Create New Office</a>
+    <ul>
+        {% for office in offices %}
+            <li>
+                <a href="{% url 'office_detail' office.id %}">{{ office.name }}</a> - {{ office.location }} 
+    
+                <a href="{% url 'office_delete' office.id %}" onclick="return confirm('Are you sure?')">Delete</a>
+                <br>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
+

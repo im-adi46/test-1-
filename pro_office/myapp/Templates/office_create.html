@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Office</title>
+</head>
+<body>
+    <h1>Create Office</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label>Name:</label>
+        <input type="text" name="name" required><br>
+        <label>Location:</label>
+        <input type="text" name="location" required><br>
+        <label>Employee Count:</label>
+        <input type="number" name="emp_count" required><br>
+        <button type="submit">Create</button>
+    </form>
+    <a href="{% url 'office_list' %}">Back to Office List</a>
+</body>
+</html>
